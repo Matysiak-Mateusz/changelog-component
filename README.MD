@@ -2,6 +2,8 @@
 
 A simple, responsive changelog UI component built with **vanilla HTML and CSS**.
 
+![Changelog component preview](./prewiew.png)
+
 This project is part of a series of small projects from [roadmap.sh](https://roadmap.sh/) that I'm building to practice and reinforce the fundamentals of HTML, CSS, and JavaScript — no frameworks, no build tools.
 
 - **Live demo:** https://changelog-component-demo-mater.vercel.app
