@@ -1,0 +1,137 @@
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:root {
+  --dark-bg-color: #1e1e1e;
+  --light-bg-color: #ffffff;
+  /* #595959 on #ffffff = 7.0:1 contrast — passes WCAG 2.1 AAA for text
+     and easily exceeds 3:1 for non-text UI (borders) */
+  --gray-color: #595959;
+}
+
+/* ---------- Page layout: center the component ---------- */
+body {
+  font-family: system-ui;
+  background-color: var(--light-bg-color);
+  color: var(--dark-bg-color);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+/* ---------- Component card ---------- */
+.changelog {
+  width: 100%;
+  max-width: 720px;
+  padding: 2rem 1.5rem;
+  border: 2px solid var(--gray-color);
+  border-radius: 16px;
+  background-color: var(--light-bg-color);
+}
+
+circle {
+  fill: var(--dark-bg-color);
+}
+
+h1 {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+h1,
+.changelog__subtitle {
+  text-align: center;
+}
+
+.changelog__subtitle,
+.changelog__date {
+  color: var(--gray-color);
+}
+
+/* Timeline: continuous vertical line drawn by CSS, circles via SVG */
+.changelog__section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 1rem;
+  row-gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding: 2rem 0;
+}
+
+.changelog__section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background-color: var(--dark-bg-color);
+}
+
+.changelog__dot {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+}
+
+.changelog__date {
+  justify-self: end;
+  text-align: right;
+}
+
+.changelog__description {
+  justify-self: start;
+}
+
+.changelog__button {
+  display: block;
+  background-color: var(--dark-bg-color);
+  /* contrast-color() picks black/white automatically for best contrast */
+  color: contrast-color(var(--dark-bg-color));
+  margin: 1.5rem auto 0;
+  padding: 12px 1.5rem;
+  border-radius: 8px;
+  border: 2px solid var(--dark-bg-color);
+  transition: background-color 0.3s;
+}
+
+.changelog__button:hover {
+  background-color: var(--gray-color);
+  color: contrast-color(var(--gray-color));
+}
+
+.changelog__subtitle,
+.changelog__date,
+.changelog__description {
+  font-size: clamp(0.77rem, 4vw, 1rem);
+}
