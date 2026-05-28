@@ -33,16 +33,3 @@ The focus is on:
 - HTML5
 - CSS3 (Grid, custom properties, `clamp()`, `contrast-color()`)
 
-## Run locally
-
-Just open `index.html` in any modern browser — no build step required.
-
-```bash
-git clone https://github.com/Matysiak-Mateusz/changelog-component.git
-cd changelog-component
-start index.html
-```
-
-## License
-
-MIT
